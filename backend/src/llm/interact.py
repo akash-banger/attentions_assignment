@@ -29,20 +29,20 @@ async def interact_with_gen_llm(messages: List[Dict], user_id: str, memory_manag
         model="llama3.2",
         messages=formatted_messages,
         stream=False,
-        # tools=[{
-        #     "name": "get_weather",
-        #     "description": "Get weather information for a specific city",
-        #     "parameters": {
-        #         "type": "object",
-        #         "properties": {
-        #             "city": {
-        #                 "type": "string",
-        #                 "description": "The name of the city"
-        #             }
-        #         },
-        #         "required": ["city"]
-        #     }
-        # }]
+        tools=[{
+            "name": "get_weather",
+            "description": "Get weather information for a specific city",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "city": {
+                        "type": "string",
+                        "description": "The name of the city"
+                    }
+                },
+                "required": ["city"]
+            }
+        }]
     )
     
     llm_content = response["message"]["content"]
