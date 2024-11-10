@@ -1,0 +1,8 @@
+fastapi
+python-socketio[asyncio]
+sqlalchemy
+openai
+open-interpreter
+uvicorn
+python-socketio
+pydantic
